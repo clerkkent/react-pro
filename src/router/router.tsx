@@ -18,6 +18,38 @@ const About = () => (
 )
 
 
+function warnUser(): void {
+    alert("This is my warning message");
+}
+let unusable: void = undefined;
+console.log(unusable)
+
+
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // okay, definitely a boolean
+let prettySure: Object = 4;
+console.log(typeof prettySure)
+for (let i = 0; i < 10 ; i++) {
+    setTimeout(function() {console.log(i); }, 100 * i);
+}
+interface LabelledValue{
+  label:string;
+}
+function printLabel(labelledobj:LabelledValue){
+  console.log(labelledobj.label)
+}
+let myObj={size:10,label:"size 10 obj"}
+printLabel(myObj)
+
+interface SearchFunc {
+  (source: string, subString: string): boolean;
+}
+let mySearch: SearchFunc;
+mySearch = function(src: string, sub: string): boolean {
+  let result = src.search(sub);
+  return result > -1;
+}
 
 
 const BasicExample = () => (
