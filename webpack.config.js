@@ -108,6 +108,14 @@ module.exports = {
                 use: 'eslint-loader',
             },
             {
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                include: path.resolve(__dirname, 'src'),
+                use: [
+                    'babel-loader'
+                ]
+            },
+            {
                 test: /\.js$/,
                 include: path.resolve(__dirname, 'src'),
                 exclude: /node_modules/,
